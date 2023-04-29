@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Design by foolishdeveloper.com -->
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet"  href="{{ url_for('static', filename='css/style.css')}}">
+  <title>Cilt Kanseri Gürültü Temizleme ve Lezyon Sınıflandırma</title>
+ 
+
+</head>
+
+
+<body>
+  <div class="nav">
+  <input type="checkbox" id="nav-check">
+  <div class="nav-header">
+    <div class="nav-title">
+      Cilt Kanseri Gürültü Temizleme ve Lezyon Sınıflandırma
+    </div>
+  </div>
+  <div class="nav-btn">
+    <label for="nav-check">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+  
+  <div class="nav-links">
+    <a href="/" >Anasayfa</a>
+ 
+
+ 
+  </div>
+</div>
+
+
+
+
+
+<div class="float-container">
+
+    <div class="float-child">
+        <h2 class="a">Yüklenen Görüntü</h2>
+      <div class="green"><img src="{{ url_for('upload_img', filename=file_name) }}" height='250' width='250' ></div>
+    </div>
+    
+    <div class="float-child">
+        <h2 class="a">Gürültüsüz Görüntü</h2>
+      <div class="blue"><img src="{{ url_for('upload_img', filename=file_name2) }}" height='250' width='250'></div>
+    </div>
+
+    
+    
+  </div>
+
+ <!-- container finish  -->
+ <br><br>
+
+ <div class="float-table">
+   <table>
+     <tr>
+       <th><p style="color:red;background-color:white">Sınıflama Sonucu</p>
+
+
+</style></th>
+     </tr>
+	<tr> 
+{% if sonuc==1 %}
+	<th> Kötü Huylu</th>
+	{% elif sonuc==0 %}	
+	<th> İyi Huylu</th></tr>
+	{% endif %}
+</table>
+</tr>
+
+
+</body>
+</html>
